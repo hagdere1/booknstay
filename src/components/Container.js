@@ -13,7 +13,7 @@ class Container extends React.Component {
 
   render() {
     return (
-      <div style={{flexGrow: 1, height: "100vh"}}>
+      <div style={{flexGrow: 1, height: "100%"}}>
         <Grid container direction={"column"}>
           <Grid item>
             <Header />
@@ -21,9 +21,6 @@ class Container extends React.Component {
 
           <Grid item>
             <List />
-            <div style={{backgroundColor: "#f7fafe"}}>
-
-            </div>
           </Grid>
         </Grid>
       </div>

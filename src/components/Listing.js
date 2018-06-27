@@ -8,7 +8,28 @@ class Listing extends React.Component {
     return (
       <Grid item xs={12} sm={4} md={3}>
         <div style={{border: "4px solid black", width: "100%", height: "100%"}}>
-          <img src={listing.image} style={{borderRadius: 2}} width={"100%"} height={"60%"} />
+
+          <div style={{
+            width: "100%",
+            paddingTop: "60%",
+            overflow: "hidden",
+            position: "relative"
+          }}>
+            <img src={listing.image}
+              style={{
+                borderRadius: 2,
+                width: "100%",
+                height: "auto",
+                minHeight: "100%",
+                margin: "auto",
+                position: "absolute",
+                top: "-100%",
+                right: "-100%",
+                bottom: "-100%",
+                left: "-100%"
+              }} />
+          </div>
+
           <div style={{height: "40%"}}>
             <div>
               <p style={{display: "inline-block", backgroundColor: "#4141df", color: "#fff", borderRadius: "50%", height: "2em", lineHeight: "2em", width: "2em", textAlign: "center"}}>{listing.rating}</p>

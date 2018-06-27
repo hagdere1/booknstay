@@ -8,7 +8,7 @@ import UserApi from '../api/userApi';
 
 class Container extends React.Component {
   componentDidMount() {
-    this.props.fetchAuthToken();
+    // this.props.fetchAuthToken();
   }
 
   render() {

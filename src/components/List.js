@@ -18,7 +18,7 @@ class List extends React.Component {
         if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
           // you're at the bottom of the page
           console.log("Bottom of page");
-          fetchListings();
+          // fetchListings();
         }
       };
     }

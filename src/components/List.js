@@ -3,8 +3,9 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 import ListingApi from '../api/listingApi';
+import Listing from './Listing';
 
-class Listings extends React.Component {
+class List extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (!this.props.token && nextProps.token) {
       this.props.fetchListings(nextProps.page, nextProps.token);
@@ -24,23 +25,13 @@ class Listings extends React.Component {
   }
 
   render() {
-    let listings = this.props.fetched ? this.props.listings.map(listing => {
-      return (
-        <Grid direction={"row"} item xs={12} sm={4} md={3}>
-          <div style={{width: "100%", height: "100%"}}>
-            <img src={listing.image} />
-            <p>{listing.rating}</p>
-            <p>{listing.badge}</p>
-            <p>{listing.name}</p>
-            <p>{listing.cost}</p>
-          </div>
-        </Grid>
-      )
-    }) : <div></div>;
+    let listings = this.props.fetched ? this.props.listings.map(
+      listing => <Listing key={listing.id} listing={listing} />
+    ) : <div></div>;
 
     return (
       <div style={{flexGrow: 1}}>
-        <Grid container>
+        <Grid container direction={"row"} spacing={24}>
           {listings}
         </Grid>
       </div>
@@ -63,4 +54,4 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Listings);
+export default connect(mapStateToProps, mapDispatchToProps)(List);

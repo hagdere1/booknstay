@@ -3,7 +3,7 @@ import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Grid from '@material-ui/core/Grid';
 import Header from './Header';
-import Listings from './Listings';
+import List from './List';
 import UserApi from '../api/userApi';
 
 class Container extends React.Component {
@@ -20,7 +20,7 @@ class Container extends React.Component {
           </Grid>
 
           <Grid item>
-            <Listings />
+            <List />
             <div style={{backgroundColor: "#f7fafe"}}>
 
             </div>

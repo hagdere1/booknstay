@@ -8,12 +8,12 @@ import UserApi from '../api/userApi';
 
 class Container extends React.Component {
   componentDidMount() {
-    // this.props.fetchAuthToken();
+    this.props.fetchAuthToken();
   }
 
   render() {
     return (
-      <div style={{flexGrow: 1}}>
+      <div style={{flexGrow: 1, height: "100vh"}}>
         <Grid container direction={"column"}>
           <Grid item>
             <Header />

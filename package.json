@@ -6,7 +6,9 @@
   "scripts": {
     "build:dev": "webpack --mode development --watch",
     "build:prod": "webpack --mode production --watch",
-    "start": "webpack-dev-server --progress --inline --hot --mode development"
+    "start:dev": "webpack-dev-server --progress --inline --hot --mode development",
+    "start": "webpack && node server.js --mode production",
+    "postinstall": "webpack -p"
   },
   "author": "Haig Gregory Agdere",
   "license": "ISC",

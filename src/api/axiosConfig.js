@@ -1,6 +1,6 @@
 export const config = (token) => {
   let options = {
-    baseURL: "https://test-api-2507.esanjo.net/hotels/v1",
+    baseURL: "https://cors-anywhere.herokuapp.com/https://test-api-2507.esanjo.net/hotels/v1",
     // withCredentials: true,
     headers: {
       "Content-Type": "application/json",

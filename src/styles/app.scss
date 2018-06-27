@@ -3,12 +3,10 @@
   padding: 0;
 }
 
-html {
+html, body {
   height: 100%;
 }
 
-body {
-  height: 100%;
-  background-color: #f8f8f8;
-  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
+div#app {
+  height: 100vh;
 }

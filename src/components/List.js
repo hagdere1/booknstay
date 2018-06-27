@@ -2,25 +2,36 @@ import React from 'react';
 import {bindActionCreators} from 'redux';
 import {connect} from 'react-redux';
 import Grid from '@material-ui/core/Grid';
+import CircularProgress from '@material-ui/core/CircularProgress';
 import ListingApi from '../api/listingApi';
 import Listing from './Listing';
 
 class List extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.fetchListings = this.fetchListings.bind(this);
+  }
+
   componentWillReceiveProps(nextProps) {
     if (!this.props.token && nextProps.token) {
       this.props.fetchListings(nextProps.page, nextProps.token);
     }
 
     if (!this.props.fetched && nextProps.fetched) {
-      let fetchListings = () => this.props.fetchListings(nextProps.page, nextProps.token);
+      let fetchListings = this.fetchListings;
 
       window.onscroll = function(ev) {
         if ((window.innerHeight + window.scrollY) >= document.body.scrollHeight) {
-          // you're at the bottom of the page
-          console.log("Bottom of page");
-          // fetchListings();
+          fetchListings();
         }
       };
+    }
+  }
+
+  fetchListings() {
+    if (!this.props.isLoading) {
+      this.props.fetchListings(this.props.page, this.props.token);
     }
   }
 
@@ -30,10 +41,14 @@ class List extends React.Component {
     ) : <div></div>;
 
     return (
-      <div style={{flexGrow: 1}}>
+      <div style={{flexGrow: 1, position: "relative", height: "200px"}}>
         <Grid container direction={"row"} spacing={24}>
           {listings}
         </Grid>
+
+        <div style={{position: "absolute", top: "50%", left: "calc(50% - 25px)"}}>
+          <CircularProgress size={50} />
+        </div>
       </div>
     );
   }
@@ -44,6 +59,7 @@ function mapStateToProps(state) {
     token: state.user.token,
     page: state.listing.page,
     fetched: state.listing.fetched,
+    isLoading: state.listing.fetching,
     listings: state.listing.listings
   };
 }

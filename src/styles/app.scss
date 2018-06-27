@@ -1,14 +1,14 @@
-@import url('https://fonts.googleapis.com/css?family=Expletus+Sans');
-
-// Variables
-$font: 'Expletus Sans';
-$background: #7A9F35;
-
-// Styles
-body {
-  background-color: $background;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-h1 {
-  font: $font;
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background-color: #f8f8f8;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }

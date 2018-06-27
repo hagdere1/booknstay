@@ -1,5 +1,5 @@
 {
-  "name": "react-redux-project",
+  "name": "booknstay",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,6 +11,8 @@
   "author": "Haig Gregory Agdere",
   "license": "ISC",
   "dependencies": {
+    "@material-ui/core": "^1.3.0",
+    "axios": "^0.18.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-redux": "^5.0.7",

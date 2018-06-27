@@ -1,9 +1,10 @@
 import {combineReducers} from 'redux';
+import userReducer from './userReducer';
+import listingReducer from './listingReducer';
 
 const rootReducer = combineReducers({
-  reducer1: function(state = {initState: []}, action) {
-    return state;
-  }
+  user: userReducer,
+  listing: listingReducer
 });
 
 export default rootReducer;

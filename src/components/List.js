@@ -6,6 +6,16 @@ import CircularProgress from '@material-ui/core/CircularProgress';
 import ListingApi from '../api/listingApi';
 import Listing from './Listing';
 
+let styles = {
+  resultsInfo: {padding: "30px 45px 20px 45px", position: "relative"},
+  averageRating: {color: "#9EA5AD", marginBottom: 8, fontSize: 12},
+  numResults: {fontWeight: "bold", fontSize: 18, marginBottom: 20},
+  tags: {display: "inline-block", color: "#4141df", fontSize: 12},
+  link: {display: "inline-block", float: "right", fontSize: 12, position: "absolute", left: "50%"},
+  listingGrid: {margin: 0, paddingLeft: 18, paddingRight: 18},
+  spinner: {width: 50, margin: "auto", padding: "15px 0 25px 0"}
+}
+
 class List extends React.Component {
   constructor(props) {
     super(props);
@@ -42,15 +52,15 @@ class List extends React.Component {
 
     if (this.props.fetched) {
       resultsInfo = (
-        <Grid id="results-info" item xs={12} style={{padding: "30px 45px 20px 45px", position: "relative"}}>
-          <p style={{color: "#9EA5AD", marginBottom: 8, fontSize: 12}}>Over 8,000 booking reviews in Dubai, with an average rating of 8.</p>
-          <p style={{fontWeight: "bold", fontSize: 18, marginBottom: 20}}>89 places found</p>
-          <div style={{display: "inline-block", color: "#4141df", fontSize: 12}}>
-            <span className="tag" style={{marginRight: 12, border: "1px solid #b3b2f2", borderRadius: 15, padding: "8px 10px", cursor: "pointer"}}>Great Deals</span>
-            <span className="tag" style={{marginRight: 12, border: "1px solid #b3b2f2", borderRadius: 15, padding: "8px 10px", cursor: "pointer"}}>Near to Metro</span>
-            <span className="tag" style={{border: "1px solid #b3b2f2", borderRadius: 15, padding: "8px 10px", cursor: "pointer"}}>5 + Rating</span>
+        <Grid id="results-info" item xs={12} style={styles.resultsInfo}>
+          <p style={styles.averageRating}>Over 8,000 booking reviews in Dubai, with an average rating of 8.</p>
+          <p style={styles.numResults}>89 places found</p>
+          <div style={styles.tags}>
+            <span className="tag" style={{marginRight: 12}}>Great Deals</span>
+            <span className="tag" style={{marginRight: 12}}>Near to Metro</span>
+            <span className="tag">5 + Rating</span>
           </div>
-          <p className="link" style={{display: "inline-block", float: "right", fontSize: 12, cursor: "pointer", position: "absolute", left: "50%"}}>Remove All Filters</p>
+          <p className="link" style={styles.link}>Remove All Filters</p>
         </Grid>
       );
 
@@ -59,25 +69,25 @@ class List extends React.Component {
       );
 
       listingGrid = (
-        <Grid container direction={"row"} spacing={24} style={{margin: 0, paddingLeft: 18, paddingRight: 18}}>
+        <Grid container direction={"row"} spacing={24} style={styles.listingGrid}>
           {listings}
         </Grid>
       );
     }
 
     return (
-      <Grid container direction={"row"} justify={"center"} alignItems={"center"} style={{backgroundColor: "#f7fafe"}}>
+      <Grid container
+            direction={"row"}
+            justify={"center"}
+            alignItems={"center"}
+            style={{backgroundColor: "#f7fafe"}}>
         {resultsInfo}
 
         {listingGrid}
 
         <Grid item xs={12}>
-          <div className="spinner" style={{
-            display: this.props.isLoading ? "block" : "none",
-            width: 50,
-            margin: "auto",
-            padding: "15px 0 25px 0"
-          }}>
+          <div className="spinner"
+               style={Object.assign({}, styles.spinner, {display: this.props.isLoading ? "block" : "none"})}>
             <CircularProgress size={50} />
           </div>
         </Grid>

@@ -25,18 +25,7 @@ class Container extends React.Component {
         </Grid>
       </div>
     );
-
-    // return (
-    //   <div style={{height: "100%", display: "flex", flexFlow: "column"}}>
-    //     <Header />
-    //     <List />
-    //   </div>
-    // );
   }
-}
-
-function mapStateToProps(state) {
-  return {};
 }
 
 function mapDispatchToProps(dispatch) {
@@ -45,4 +34,4 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Container);
+export default connect(null, mapDispatchToProps)(Container);

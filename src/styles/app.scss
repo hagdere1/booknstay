@@ -27,13 +27,22 @@ h1 {
   color: #fff !important;
 }
 
-.tag:hover {
-  background-color: #4141df;
-  color: #fff;
+.tag {
+  border: 1px solid #b3b2f2;
+  border-radius: 15px;
+  padding: 8px 10px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #4141df;
+    color: #fff;
+  }
 }
 
 .link {
   color: #807FBF;
+  cursor: pointer;
+
   &:hover {
     color: #907FBF;
   }

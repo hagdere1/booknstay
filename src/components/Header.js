@@ -5,6 +5,8 @@ import {withStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import TextField from '@material-ui/core/TextField';
 import moment from 'moment-timezone';
+import Banner from './Banner';
+import Navbar from './Navbar';
 
 const styles = theme => ({
 	input: {
@@ -30,56 +32,8 @@ class Header extends React.Component {
   render() {
     return (
       <AppBar position="static" color="default" style={{boxShadow: "none", borderBottom: "1px solid #b3b2f2"}}>
-        <div style={{backgroundColor: "#4141df", color: "#fff", fontSize: 12, padding: "15px 30px"}}>
-          <div id="appbar-top-left">
-            Contact us directly at +971 (55) 895 8452 (Local Time {moment().tz("Asia/Dubai").format("H:mm")})
-          </div>
-          <div id="appbar-top-right">
-            <span style={{cursor: "pointer", marginRight: 20}}>Join Now</span>
-            <span style={{cursor: "pointer", marginRight: 20}}>Guest Sign In</span>
-            <div id="#display-options" style={{display: "inline-block"}}>
-              <span className="dropdown-button" style={{cursor: "pointer", marginRight: 15, border: "1px solid #fff", borderRadius: 15, padding: "5px 10px"}}>
-                ENG
-                <img src="/down_arrow_white.svg" width="14" height="14" style={{verticalAlign: "bottom", marginLeft: 10}} />
-              </span>
-              <span className="dropdown-button" style={{cursor: "pointer", border: "1px solid #fff", borderRadius: 15, padding: "5px 10px"}}>
-                USD
-                <img src="/down_arrow_white.svg" width="14" height="14" style={{verticalAlign: "bottom", marginLeft: 10}} />
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <div style={{backgroundColor: "#fff", padding: "15px 30px"}}>
-          <h1 id="header-logo" style={{color: "#4141df", display: "inline-block"}}>booknstay</h1>
-
-          <div id="header-filter-section" style={{display: "inline-block", verticalAlign: "top", paddingLeft: 15, paddingRight: 15, marginLeft: 15, marginRight: 20, borderRight: "1px solid #eee", borderLeft: "1px solid #eee"}}>
-            <div id="searchfield" style={{display: "inline-block", verticalAlign: "top", marginRight: 30}}>
-              <img src="/search_24px.svg" style={{verticalAlign: "top", marginTop: 4, marginRight: 15}} />
-              <div id="textfield-wrapper" style={{display: "inline-block", verticalAlign: "top", width: 325, fontWeight: "bold"}}>
-                <TextField inputProps={{classes: {input: styles.input} }} value={this.state.searchQuery} onChange={this.handleTextChange} fullWidth={true} />
-              </div>
-            </div>
-            <div id="datepicker-wrap" style={{display: "inline-block", fontSize: 12, verticalAlign: "top", marginTop: 2}}>
-              <span style={{marginRight: 10, fontWeight: "bold"}}>April</span>
-              <p className="datepicker" style={{display: "inline-block", backgroundColor: "#fff", color: "#4141df", borderRadius: "50%", border: "1px solid #4141df", height: "2.5em", lineHeight: "2.5em", width: "2.5em", textAlign: "center", fontSize: 10, cursor: "pointer", marginRight: 5}}>29</p>
-              <p className="datepicker" style={{display: "inline-block", backgroundColor: "#fff", color: "#4141df", borderRadius: "50%", border: "1px solid #4141df", height: "2.5em", lineHeight: "2.5em", width: "2.5em", textAlign: "center", fontSize: 10, cursor: "pointer"}}>30</p>
-            </div>
-          </div>
-
-          <div id="header-services-menu" style={{display: "inline-block", fontSize: 12, fontWeight: "bold", float: "right"}}>
-            <div className="service" style={{display: "inline-block", verticalAlign: "top", marginRight: 30, marginTop: 8, cursor: "pointer"}}>
-              Accomodation
-              <img src="/down_arrow_blue.svg" width="9" height="9" style={{verticalAlign: "middle", marginLeft: 5}} />
-            </div>
-            <div className="service" style={{display: "inline-block", verticalAlign: "top", marginRight: 30, marginTop: 8, cursor: "pointer"}}>
-              Restaurants
-              <img src="/down_arrow_blue.svg" width="9" height="9" style={{verticalAlign: "middle", marginLeft: 5}} />
-            </div>
-            <div className="service" style={{display: "inline-block", verticalAlign: "top", marginRight: 30, marginTop: 8, cursor: "pointer"}}>Rental Cars</div>
-            <div style={{display: "inline-block", verticalAlign: "top", cursor: "pointer", marginTop: 8}}>Flights</div>
-          </div>
-        </div>
+        <Banner />
+        <Navbar />
       </AppBar>
     );
   }

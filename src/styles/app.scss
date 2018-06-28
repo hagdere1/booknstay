@@ -16,11 +16,11 @@ h1 {
   font-size: 26px;
 }
 
-.dropdown-button:hover {
-  background-color: #fff;
-  color: #4141df;
-  border: 1px solid #fff;
-}
+// .dropdown-button:hover {
+//   background-color: #fff;
+//   color: #4141df;
+//   border: 1px solid #fff;
+// }
 
 .datepicker:hover {
   background-color: #4141df !important;
@@ -54,7 +54,7 @@ h1 {
   float: right;
 }
 
-@media screen and (max-width: 1111px) {
+@media screen and (max-width: 1140px) {
   #header-services-menu {
     margin-top: 15px !important;
     display: block !important;
@@ -70,13 +70,11 @@ h1 {
   }
 }
 
-@media screen and (max-width: 726px) {
+@media screen and (max-width: 740px) {
   #textfield-wrapper {
     width: 200px !important;
   }
-}
 
-@media screen and (max-width: 700px) {
   #appbar-top-left {
     display: none;
   }
@@ -121,5 +119,11 @@ h1 {
 
   .service {
     margin-right: 15px !important;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  #display-options {
+    margin-top: 10px !important;
   }
 }

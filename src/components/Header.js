@@ -37,8 +37,16 @@ class Header extends React.Component {
           <div id="appbar-top-right">
             <span style={{cursor: "pointer", marginRight: 20}}>Join Now</span>
             <span style={{cursor: "pointer", marginRight: 20}}>Guest Sign In</span>
-            <span className="dropdown-button" style={{cursor: "pointer", marginRight: 15, border: "1px solid #fff", borderRadius: 15, padding: "5px 10px"}}>ENG </span>
-            <span className="dropdown-button" style={{cursor: "pointer", border: "1px solid #fff", borderRadius: 15, padding: "5px 10px"}}>USD </span>
+            <div id="#display-options" style={{display: "inline-block"}}>
+              <span className="dropdown-button" style={{cursor: "pointer", marginRight: 15, border: "1px solid #fff", borderRadius: 15, padding: "5px 10px"}}>
+                ENG
+                <img src="/down_arrow_white.svg" width="14" height="14" style={{verticalAlign: "bottom", marginLeft: 10}} />
+              </span>
+              <span className="dropdown-button" style={{cursor: "pointer", border: "1px solid #fff", borderRadius: 15, padding: "5px 10px"}}>
+                USD
+                <img src="/down_arrow_white.svg" width="14" height="14" style={{verticalAlign: "bottom", marginLeft: 10}} />
+              </span>
+            </div>
           </div>
         </div>
 
@@ -52,18 +60,24 @@ class Header extends React.Component {
                 <TextField inputProps={{classes: {input: styles.input} }} value={this.state.searchQuery} onChange={this.handleTextChange} fullWidth={true} />
               </div>
             </div>
-            <div id="datepicker-wrap" style={{display: "inline-block", fontSize: 12, verticalAlign: "top", marginTop: 3}}>
+            <div id="datepicker-wrap" style={{display: "inline-block", fontSize: 12, verticalAlign: "top", marginTop: 2}}>
               <span style={{marginRight: 10, fontWeight: "bold"}}>April</span>
               <p className="datepicker" style={{display: "inline-block", backgroundColor: "#fff", color: "#4141df", borderRadius: "50%", border: "1px solid #4141df", height: "2.5em", lineHeight: "2.5em", width: "2.5em", textAlign: "center", fontSize: 10, cursor: "pointer", marginRight: 5}}>29</p>
               <p className="datepicker" style={{display: "inline-block", backgroundColor: "#fff", color: "#4141df", borderRadius: "50%", border: "1px solid #4141df", height: "2.5em", lineHeight: "2.5em", width: "2.5em", textAlign: "center", fontSize: 10, cursor: "pointer"}}>30</p>
             </div>
           </div>
 
-          <div id="header-services-menu" style={{display: "inline-block", fontSize: 12, fontWeight: "bold", verticalAlign: "top", marginTop: 8, float: "right"}}>
-            <div className="service" style={{display: "inline-block", marginRight: 30, cursor: "pointer"}}>Accomodation</div>
-            <div className="service" style={{display: "inline-block", marginRight: 30, cursor: "pointer"}}>Restaurants</div>
-            <div className="service" style={{display: "inline-block", marginRight: 30, cursor: "pointer"}}>Rental Cars</div>
-            <div style={{display: "inline-block", cursor: "pointer"}}>Flights</div>
+          <div id="header-services-menu" style={{display: "inline-block", fontSize: 12, fontWeight: "bold", float: "right"}}>
+            <div className="service" style={{display: "inline-block", verticalAlign: "top", marginRight: 30, marginTop: 8, cursor: "pointer"}}>
+              Accomodation
+              <img src="/down_arrow_blue.svg" width="9" height="9" style={{verticalAlign: "middle", marginLeft: 5}} />
+            </div>
+            <div className="service" style={{display: "inline-block", verticalAlign: "top", marginRight: 30, marginTop: 8, cursor: "pointer"}}>
+              Restaurants
+              <img src="/down_arrow_blue.svg" width="9" height="9" style={{verticalAlign: "middle", marginLeft: 5}} />
+            </div>
+            <div className="service" style={{display: "inline-block", verticalAlign: "top", marginRight: 30, marginTop: 8, cursor: "pointer"}}>Rental Cars</div>
+            <div style={{display: "inline-block", verticalAlign: "top", cursor: "pointer", marginTop: 8}}>Flights</div>
           </div>
         </div>
       </AppBar>

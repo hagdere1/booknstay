@@ -15,6 +15,11 @@ export default function(state = listingInitState, action) {
         fetching: false,
         error: false
       });
+
+    case "FETCH_LISTINGS_FAILURE":
+      return Object.assign({}, state, {
+        fetching: false
+      });
   }
   return state;
 }

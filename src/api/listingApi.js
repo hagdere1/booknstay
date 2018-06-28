@@ -9,7 +9,10 @@ class ListingApi {
         dispatch({
           type: "FETCH_LISTINGS_SUCCESS",
           payload: response.data.data
-        });
+        })
+      })
+      .catch(error => {
+        dispatch({type: "FETCH_LISTINGS_FAILURE"});
       })
     }
   }

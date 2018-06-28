@@ -4,6 +4,7 @@ import {connect} from 'react-redux';
 import {withStyles} from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import TextField from '@material-ui/core/TextField';
+import moment from 'moment-timezone';
 
 const styles = theme => ({
 	input: {
@@ -31,7 +32,7 @@ class Header extends React.Component {
       <AppBar position="static" color="default" style={{boxShadow: "none", borderBottom: "1px solid #b3b2f2"}}>
         <div style={{backgroundColor: "#4141df", color: "#fff", fontSize: 12, padding: "15px 30px"}}>
           <div id="appbar-top-left">
-            Contact us directly at +971 (55) 895 8452 (Local Time 22:19)
+            Contact us directly at +971 (55) 895 8452 (Local Time {moment().tz("Asia/Dubai").format("H:mm")})
           </div>
           <div id="appbar-top-right">
             <span style={{cursor: "pointer", marginRight: 20}}>Join Now</span>

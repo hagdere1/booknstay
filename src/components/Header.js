@@ -47,11 +47,11 @@ class Header extends React.Component {
           <div id="header-filter-section" style={{display: "inline-block", verticalAlign: "top", paddingLeft: 15, paddingRight: 15, marginLeft: 15, marginRight: 20, borderRight: "1px solid #eee", borderLeft: "1px solid #eee"}}>
             <div id="searchfield" style={{display: "inline-block", verticalAlign: "top", marginRight: 30}}>
               <img src="/search_24px.svg" style={{verticalAlign: "top", marginTop: 4, marginRight: 15}} />
-              <div style={{display: "inline-block", verticalAlign: "top", width: 325, fontWeight: "bold"}}>
+              <div id="textfield-wrapper" style={{display: "inline-block", verticalAlign: "top", width: 325, fontWeight: "bold"}}>
                 <TextField inputProps={{classes: {input: styles.input} }} value={this.state.searchQuery} onChange={this.handleTextChange} fullWidth={true} />
               </div>
             </div>
-            <div style={{display: "inline-block", fontSize: 12, verticalAlign: "top", marginTop: 3}}>
+            <div id="datepicker-wrap" style={{display: "inline-block", fontSize: 12, verticalAlign: "top", marginTop: 3}}>
               <span style={{marginRight: 10, fontWeight: "bold"}}>April</span>
               <p className="datepicker" style={{display: "inline-block", backgroundColor: "#fff", color: "#4141df", borderRadius: "50%", border: "1px solid #4141df", height: "2.5em", lineHeight: "2.5em", width: "2.5em", textAlign: "center", fontSize: 10, cursor: "pointer", marginRight: 5}}>29</p>
               <p className="datepicker" style={{display: "inline-block", backgroundColor: "#fff", color: "#4141df", borderRadius: "50%", border: "1px solid #4141df", height: "2.5em", lineHeight: "2.5em", width: "2.5em", textAlign: "center", fontSize: 10, cursor: "pointer"}}>30</p>
@@ -59,9 +59,9 @@ class Header extends React.Component {
           </div>
 
           <div id="header-services-menu" style={{display: "inline-block", fontSize: 12, fontWeight: "bold", verticalAlign: "top", marginTop: 8, float: "right"}}>
-            <div style={{display: "inline-block", marginRight: 30, cursor: "pointer"}}>Accomodation</div>
-            <div style={{display: "inline-block", marginRight: 30, cursor: "pointer"}}>Restaurants</div>
-            <div style={{display: "inline-block", marginRight: 30, cursor: "pointer"}}>Rental Cars</div>
+            <div className="service" style={{display: "inline-block", marginRight: 30, cursor: "pointer"}}>Accomodation</div>
+            <div className="service" style={{display: "inline-block", marginRight: 30, cursor: "pointer"}}>Restaurants</div>
+            <div className="service" style={{display: "inline-block", marginRight: 30, cursor: "pointer"}}>Rental Cars</div>
             <div style={{display: "inline-block", cursor: "pointer"}}>Flights</div>
           </div>
         </div>

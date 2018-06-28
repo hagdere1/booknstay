@@ -44,7 +44,7 @@ h1 {
   margin-bottom: 0;
 }
 
-// Header
+// Responsive header
 
 #appbar-top-left, #appbar-top-right {
   display: inline-block;
@@ -54,7 +54,7 @@ h1 {
   float: right;
 }
 
-@media screen and (max-width: 1110px) {
+@media screen and (max-width: 1111px) {
   #header-services-menu {
     margin-top: 15px !important;
     display: block !important;
@@ -65,6 +65,14 @@ h1 {
     margin-right: 0 !important;
     padding-right: 0 !important;
     border-right: none !important;
+    border-left: none !important;
+    float: right !important;
+  }
+}
+
+@media screen and (max-width: 726px) {
+  #textfield-wrapper {
+    width: 200px !important;
   }
 }
 
@@ -81,16 +89,37 @@ h1 {
   }
 }
 
-// @media screen and (max-width: 596px) {
-//   #searchfield div {
-//     width: 250px !important;
-//   }
-// }
+@media screen and (max-width: 600px) {
+  #header-filter-section {
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+}
 
 @media screen and (max-width: 490px) {
   #results-info .link {
     display: block !important;
     float: none !important;
     margin-top: 15px !important;
+  }
+}
+
+@media screen and (max-width: 440px) {
+  #datepicker-wrap {
+    margin-left: 40px !important;
+    margin-top: 15px !important;
+  }
+
+  #textfield-wrapper {
+    width: 270px !important;
+  }
+
+  #searchfield {
+    margin-right: 0 !important;
+  }
+
+  .service {
+    margin-right: 15px !important;
   }
 }

@@ -113,11 +113,6 @@ h1 {
     margin-top: 15px;
     margin-bottom: 15px;
   }
-
-  .react-datepicker-popper {
-    // left: -215px !important;
-    // top: 285px !important;
-  }
 }
 
 @media screen and (max-width: 490px) {
@@ -152,5 +147,11 @@ h1 {
 
   .service {
     margin-right: 15px !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  #display-options {
+    display: none !important;
   }
 }

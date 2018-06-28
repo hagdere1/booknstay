@@ -6,7 +6,7 @@ import moment from 'moment-timezone';
 const styles ={
   container: {backgroundColor: "#4141df", color: "#fff", fontSize: 12, padding: "15px 30px"},
   button: {cursor: "pointer", marginRight: 20},
-  dropdown: {cursor: "pointer", border: "1px solid #fff", borderRadius: 15, padding: "5px 10px"},
+  dropdown: {display: "inline-block", cursor: "pointer", border: "1px solid #fff", borderRadius: 15, padding: "5px 10px"},
   icon: {verticalAlign: "bottom", marginLeft: 10}
 }
 
@@ -27,14 +27,14 @@ class Banner extends React.Component {
           <span style={styles.button}>Join Now</span>
           <span style={styles.button}>Guest Sign In</span>
           <div id="#display-options" style={{display: "inline-block"}}>
-            <span className="dropdown-button" style={Object.assign({}, styles.dropdown, {marginRight: 15})}>
+            <div className="dropdown-button" style={Object.assign({}, styles.dropdown, {marginRight: 15})}>
               ENG
               <img src="/down_arrow_white.svg" width="14" height="14" style={styles.icon} />
-            </span>
-            <span className="dropdown-button" style={styles.dropdown}>
+            </div>
+            <div className="dropdown-button" style={styles.dropdown}>
               USD
               <img src="/down_arrow_white.svg" width="14" height="14" style={styles.icon} />
-            </span>
+            </div>
           </div>
         </div>
       </div>

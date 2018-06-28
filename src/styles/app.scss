@@ -22,10 +22,10 @@ h1 {
 //   border: 1px solid #fff;
 // }
 
-.datepicker:hover {
-  background-color: #4141df !important;
-  color: #fff !important;
-}
+// .datepicker:hover {
+//   background-color: #4141df !important;
+//   color: #fff !important;
+// }
 
 .tag {
   border: 1px solid #b3b2f2;
@@ -53,6 +53,10 @@ h1 {
   margin-bottom: 0;
 }
 
+.react-datepicker__triangle {
+  display: none !important;
+}
+
 // Responsive header
 
 #appbar-top-left, #appbar-top-right {
@@ -62,6 +66,13 @@ h1 {
 #appbar-top-right {
   float: right;
 }
+
+.react-datepicker-popper {
+  left: -215px !important;
+}
+
+// In a perfect world, I would find work arounds to using !important in these media queries
+// but in the interest of time I've done this to overwrite inline component styles.
 
 @media screen and (max-width: 1140px) {
   #header-services-menu {
@@ -96,11 +107,16 @@ h1 {
   }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 626px) {
   #header-filter-section {
     width: 100%;
     margin-top: 15px;
     margin-bottom: 15px;
+  }
+
+  .react-datepicker-popper {
+    // left: -215px !important;
+    // top: 285px !important;
   }
 }
 
@@ -112,7 +128,7 @@ h1 {
   }
 }
 
-@media screen and (max-width: 440px) {
+@media screen and (max-width: 475px) {
   #datepicker-wrap {
     margin-left: 40px !important;
     margin-top: 15px !important;
@@ -126,13 +142,15 @@ h1 {
     margin-right: 0 !important;
   }
 
-  .service {
-    margin-right: 15px !important;
-  }
-}
-
-@media screen and (max-width: 440px) {
   #display-options {
     margin-top: 10px !important;
+  }
+
+  .react-datepicker-popper {
+    left: -36px !important;
+  }
+
+  .service {
+    margin-right: 15px !important;
   }
 }

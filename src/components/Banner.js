@@ -1,7 +1,6 @@
 import React from 'react';
 import {bindActionCreators, compose} from 'redux';
 import {connect} from 'react-redux';
-import AppBar from '@material-ui/core/AppBar';
 import moment from 'moment-timezone';
 
 const styles ={

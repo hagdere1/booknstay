@@ -4,7 +4,8 @@ import {connect} from 'react-redux';
 import moment from 'moment-timezone';
 
 const styles ={
-  container: {backgroundColor: "#4141df", color: "#fff", fontSize: 12, padding: "15px 30px"},
+  container: {backgroundColor: "#4141df", color: "#fff", fontSize: 12, padding: "10px 30px"},
+  contact: {verticalAlign: "top", marginTop: 6},
   button: {cursor: "pointer", marginRight: 20},
   dropdown: {display: "inline-block", cursor: "pointer", border: "1px solid #fff", borderRadius: 15, padding: "5px 10px"},
   icon: {verticalAlign: "bottom", marginLeft: 10}
@@ -20,7 +21,7 @@ class Banner extends React.Component {
   render() {
     return (
       <div style={styles.container}>
-        <div id="appbar-top-left">
+        <div id="appbar-top-left" style={styles.contact}>
           Contact us directly at +971 (55) 895 8452 (Local Time {moment().tz("Asia/Dubai").format("H:mm")})
         </div>
         <div id="appbar-top-right">

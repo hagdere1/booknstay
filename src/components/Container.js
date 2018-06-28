@@ -13,18 +13,25 @@ class Container extends React.Component {
 
   render() {
     return (
-      <div style={{flexGrow: 1, height: "100%"}}>
-        <Grid container direction={"column"}>
-          <Grid item>
+      <div style={{flexGrow: 1, height: "100%", backgroundColor: "#f7fafe"}}>
+        <Grid container direction={"row"} style={{height: "100%"}}>
+          <Grid item xs={12}>
             <Header />
           </Grid>
 
-          <Grid item>
+          <Grid item xs={12}>
             <List />
           </Grid>
         </Grid>
       </div>
     );
+
+    // return (
+    //   <div style={{height: "100%", display: "flex", flexFlow: "column"}}>
+    //     <Header />
+    //     <List />
+    //   </div>
+    // );
   }
 }
 

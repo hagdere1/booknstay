@@ -5,13 +5,38 @@
 
 html, body {
   height: 100%;
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif;
 }
 
 div#app {
-  height: 100vh;
+  height: 100%;
+}
+
+h1 {
+  font-size: 26px;
 }
 
 #list > div:first-of-type {
   margin-top: 0;
   margin-bottom: 0;
+}
+
+#appbar-top-left, #appbar-top-right {
+  display: inline-block;
+}
+
+#appbar-top-right {
+  float: right;
+}
+
+@media screen and (max-width: 670px) {
+  #appbar-top-left, #appbar-top-right {
+    display: block;
+    float: none;
+    text-align: center;
+  }
+
+  #appbar-top-right {
+    margin-top: 15px;
+  }
 }

@@ -7,17 +7,18 @@ class Listing extends React.Component {
 
     return (
       <Grid item xs={12} sm={4} md={3}>
-        <div style={{border: "4px solid black", width: "100%", height: "100%"}}>
+        <div style={{width: "100%", height: "100%"}}>
 
           <div style={{
             width: "100%",
             paddingTop: "60%",
             overflow: "hidden",
-            position: "relative"
+            position: "relative",
+            marginBottom: 10
           }}>
             <img src={listing.image}
               style={{
-                borderRadius: 2,
+                borderRadius: 3,
                 width: "100%",
                 height: "auto",
                 minHeight: "100%",
@@ -31,12 +32,12 @@ class Listing extends React.Component {
           </div>
 
           <div style={{height: "40%"}}>
-            <div>
-              <p style={{display: "inline-block", backgroundColor: "#4141df", color: "#fff", borderRadius: "50%", height: "2em", lineHeight: "2em", width: "2em", textAlign: "center"}}>{listing.rating}</p>
-              <p style={{display: "inline-block", color: "#4141df", marginLeft: 10}}>{listing.badge}</p>
+            <div style={{marginBottom: 10}}>
+              <p style={{display: "inline-block", backgroundColor: "#4141df", color: "#fff", borderRadius: "50%", height: "2.5em", lineHeight: "2.5em", width: "2.5em", textAlign: "center", fontSize: 10}}>{listing.rating}</p>
+              <p style={{display: "inline-block", color: "#4141df", marginLeft: 10, fontSize: 10}}>{listing.badge}</p>
             </div>
-            <p style={{fontWeight: "bold"}}>{listing.name}</p>
-            <p style={{color: "#afb5bd"}}>Starting from $ {listing.cost}</p>
+            <p style={{fontWeight: "bold", marginBottom: 7, fontSize: 14}}>{listing.name}</p>
+            <p style={{color: "#afb5bd", fontSize: 12}}>Starting from $ {listing.cost}</p>
           </div>
         </div>
       </Grid>

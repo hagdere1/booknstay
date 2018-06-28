@@ -30,65 +30,57 @@ class List extends React.Component {
   }
 
   fetchListings() {
-    if (!this.props.isLoading && this.props.page < 1) {
+    if (!this.props.isLoading) {
       this.props.fetchListings(this.props.page, this.props.token);
     }
   }
 
   render() {
-    let listings = <div></div>,
+    let resultsInfo = <div></div>,
         listingGrid = <div></div>,
-        resultsInfo = <div></div>;
+        listings = <div></div>;
 
     if (this.props.fetched) {
+      resultsInfo = (
+        <Grid id="results-info" item xs={12} style={{padding: "30px 45px 20px 45px", position: "relative"}}>
+          <p style={{color: "#9EA5AD", marginBottom: 8, fontSize: 12}}>Over 8,000 booking reviews in Dubai, with an average rating of 8.</p>
+          <p style={{fontWeight: "bold", fontSize: 18, marginBottom: 20}}>89 places found</p>
+          <div style={{display: "inline-block", color: "#4141df", fontSize: 12}}>
+            <span className="tag" style={{marginRight: 12, border: "1px solid #b3b2f2", borderRadius: 15, padding: "8px 10px", cursor: "pointer"}}>Great Deals</span>
+            <span className="tag" style={{marginRight: 12, border: "1px solid #b3b2f2", borderRadius: 15, padding: "8px 10px", cursor: "pointer"}}>Near to Metro</span>
+            <span className="tag" style={{border: "1px solid #b3b2f2", borderRadius: 15, padding: "8px 10px", cursor: "pointer"}}>5 + Rating</span>
+          </div>
+          <p className="link" style={{display: "inline-block", float: "right", fontSize: 12, cursor: "pointer", position: "absolute", left: "50%"}}>Remove All Filters</p>
+        </Grid>
+      );
+
       listings = this.props.listings.map(
         listing => <Listing key={listing.id} listing={listing} />
       );
 
       listingGrid = (
-        <Grid container direction={"row"} spacing={24} style={{margin: 0}}>
+        <Grid container direction={"row"} spacing={24} style={{margin: 0, paddingLeft: 18, paddingRight: 18}}>
           {listings}
-        </Grid>
-      );
-
-      resultsInfo = (
-        <Grid item xs={12} style={{margin: 30, marginBottom: 25}}>
-          <p style={{color: "#9EA5AD", marginBottom: 8, fontSize: 12}}>Over 8,000 bookin reviews in Dubai, with an average rating of 8.</p>
-          <p style={{fontWeight: "bold", fontSize: 16, marginBottom: 20}}>89 places found</p>
-          <div style={{display: "inline-block", color: "#4141df", fontSize: 12}}>
-            <span style={{marginRight: 15, border: "1px solid #b3b2f2", borderRadius: 15, padding: "5px 10px"}}>Great Deals</span>
-            <span style={{marginRight: 15, border: "1px solid #b3b2f2", borderRadius: 15, padding: "5px 10px"}}>Near to Metro</span>
-            <span style={{border: "1px solid #b3b2f2", borderRadius: 15, padding: "5px 10px"}}>5 + Rating</span>
-          </div>
-          <p style={{display: "inline-block", color: "#807FBF", float: "right", fontSize: 12}}>Remove All Filters</p>
         </Grid>
       );
     }
 
-
-
     return (
-      <Grid container justify={"center"} alignItems={"center"}>
-      {/*<div id="list" style={{
-          flex: "1 1 auto",
-          backgroundColor: "#f7fafe",
-          justify
-        }}>*/}
+      <Grid container direction={"row"} justify={"center"} alignItems={"center"} style={{backgroundColor: "#f7fafe"}}>
         {resultsInfo}
 
         {listingGrid}
 
         <Grid item xs={12}>
           <div className="spinner" style={{
-            /*display: this.props.isLoading ? "block" : "none",*/
+            display: this.props.isLoading ? "block" : "none",
             width: 50,
             margin: "auto",
-            padding: "15px 0"
+            padding: "15px 0 25px 0"
           }}>
             <CircularProgress size={50} />
           </div>
         </Grid>
-      {/*</div>*/}
       </Grid>
     );
   }

@@ -14,6 +14,7 @@ class Listing extends React.Component {
             paddingTop: "60%",
             overflow: "hidden",
             position: "relative",
+            borderRadius: 2,
             marginBottom: 10
           }}>
             <img src={listing.image}

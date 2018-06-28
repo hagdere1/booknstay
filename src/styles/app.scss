@@ -16,10 +16,35 @@ h1 {
   font-size: 26px;
 }
 
+.dropdown-button:hover {
+  background-color: #fff;
+  color: #4141df;
+  border: 1px solid #fff;
+}
+
+.datepicker:hover {
+  background-color: #4141df !important;
+  color: #fff !important;
+}
+
+.tag:hover {
+  background-color: #4141df;
+  color: #fff;
+}
+
+.link {
+  color: #807FBF;
+  &:hover {
+    color: #907FBF;
+  }
+}
+
 #list > div:first-of-type {
   margin-top: 0;
   margin-bottom: 0;
 }
+
+// Header
 
 #appbar-top-left, #appbar-top-right {
   display: inline-block;
@@ -29,7 +54,7 @@ h1 {
   float: right;
 }
 
-@media screen and (max-width: 670px) {
+@media screen and (max-width: 700px) {
   #appbar-top-left, #appbar-top-right {
     display: block;
     float: none;
@@ -38,5 +63,20 @@ h1 {
 
   #appbar-top-right {
     margin-top: 15px;
+  }
+
+  #results-info .link {
+    position: relative !important;
+    display: inline-block !important;
+    float: right !important;
+    left: auto !important;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  #results-info .link {
+    display: block !important;
+    float: none !important;
+    margin-top: 15px !important;
   }
 }

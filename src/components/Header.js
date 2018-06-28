@@ -42,9 +42,9 @@ class Header extends React.Component {
         </div>
 
         <div style={{backgroundColor: "#fff", padding: "15px 30px"}}>
-          <h1 style={{color: "#4141df", display: "inline-block"}}>booknstay</h1>
+          <h1 id="header-logo" style={{color: "#4141df", display: "inline-block"}}>booknstay</h1>
 
-          <div style={{display: "inline-block", verticalAlign: "top", paddingLeft: 15, paddingRight: 15, marginLeft: 15, marginRight: 15, borderRight: "1px solid #eee", borderLeft: "1px solid #eee"}}>
+          <div id="header-filter-section" style={{display: "inline-block", verticalAlign: "top", paddingLeft: 15, paddingRight: 15, marginLeft: 15, marginRight: 20, borderRight: "1px solid #eee", borderLeft: "1px solid #eee"}}>
             <div id="searchfield" style={{display: "inline-block", verticalAlign: "top", marginRight: 30}}>
               <img src="/search_24px.svg" style={{verticalAlign: "top", marginTop: 4, marginRight: 15}} />
               <div style={{display: "inline-block", verticalAlign: "top", width: 325, fontWeight: "bold"}}>
@@ -58,7 +58,7 @@ class Header extends React.Component {
             </div>
           </div>
 
-          <div style={{display: "inline-block", fontSize: 12, fontWeight: "bold", verticalAlign: "top", marginTop: 8, float: "right"}}>
+          <div id="header-services-menu" style={{display: "inline-block", fontSize: 12, fontWeight: "bold", verticalAlign: "top", marginTop: 8, float: "right"}}>
             <div style={{display: "inline-block", marginRight: 30, cursor: "pointer"}}>Accomodation</div>
             <div style={{display: "inline-block", marginRight: 30, cursor: "pointer"}}>Restaurants</div>
             <div style={{display: "inline-block", marginRight: 30, cursor: "pointer"}}>Rental Cars</div>

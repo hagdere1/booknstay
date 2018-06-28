@@ -54,15 +54,23 @@ h1 {
   float: right;
 }
 
-@media screen and (max-width: 700px) {
-  #appbar-top-left, #appbar-top-right {
-    display: block;
-    float: none;
-    text-align: center;
+@media screen and (max-width: 1110px) {
+  #header-services-menu {
+    margin-top: 15px !important;
+    display: block !important;
+    float: none !important;
   }
 
-  #appbar-top-right {
-    margin-top: 15px;
+  #header-filter-section {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+    border-right: none !important;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  #appbar-top-left {
+    display: none;
   }
 
   #results-info .link {
@@ -72,6 +80,12 @@ h1 {
     left: auto !important;
   }
 }
+
+// @media screen and (max-width: 596px) {
+//   #searchfield div {
+//     width: 250px !important;
+//   }
+// }
 
 @media screen and (max-width: 490px) {
   #results-info .link {
